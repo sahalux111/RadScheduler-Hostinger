@@ -1,22 +1,30 @@
-.
-├── config/
-│   └── db.php                 # Database connection
-├── includes/
-│   ├── auth.php               # Authentication logic & session management
-│   ├── roles.php              # Role-based access control functions
-│   ├── availability.php       # Functions for availability management
-│   ├── breaks.php             # Break management for doctors and QA
-│   ├── notes.php              # Note management functions for doctors and QA
-├── public/
-│   ├── index.php              # Entry point, route based on role
-│   ├── login.php              # Login form
-│   ├── dashboard.php          # Main dashboard (Role-based views)
-│   ├── logout.php             # Logout functionality
-│   ├── manage_schedule.php    # Admin page to manage doctor/QA schedule
-├── templates/
-│   ├── header.php             # Header and nav bar
-│   └── footer.php             # Footer
-└── styles/
-    └── style.css              # CSS for dashboard and UI
+/doctor-management-app
+│
+├── /public
+│   └── index.php              # Entry point
+│
+├── /views
+│   ├── login.php              # Login page
+│   ├── admin_dashboard.php     # Admin dashboard
+│   ├── doctor_dashboard.php    # Doctor dashboard
+│   ├── qa_dashboard.php        # QA dashboard
+│
+├── /controllers
+│   ├── AuthController.php      # Handles login, logout
+│   ├── AdminController.php     # Handles admin actions
+│   ├── DoctorController.php    # Handles doctor actions
+│   ├── QAController.php        # Handles QA actions
+│
+├── /models
+│   ├── User.php                # User model for database interactions
+│   ├── Availability.php        # Availability model
+│   ├── Note.php                # Note management model
+│
+├── /config
+│   ├── db.php                  # Database connection
+│
+└── /resources
+    ├── styles.css              # CSS for styling
+    └── scripts.js              # JavaScript for interactivity
 
 
