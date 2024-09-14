@@ -1,17 +1,13 @@
-- /project-root
-  - index.php (Login page)
-  - dashboard.php (Handles role-based redirection)
-  - /admin
-    - dashboard.php (Admin dashboard)
-    - manage_availability.php
-    - manage_notes.php
-  - /qa
-    - dashboard.php (QA dashboard)
-    - manage_availability.php
-    - manage_notes.php
-  - /doctor
-    - dashboard.php (Doctor dashboard)
-    - manage_availability.php
-  - /includes
-    - db.php (Database connection)
-    - auth.php (Authentication logic)
+/doctor-management-app
+│── index.php               (Main entry point)
+│── db.php                  (Database connection)
+│── login.php               (Login functionality)
+│── dashboard.php           (Dashboard based on roles)
+│── admin_controls.php      (Admin controls for scheduling, breaks, notes)
+│── doctor_availability.php (Doctor's availability management)
+│── qa_availability.php     (QA Radiographer availability management)
+│── css
+│    └── style.css          (Basic styling)
+└── js
+     └── scripts.js         (Basic scripts for UI)
+
