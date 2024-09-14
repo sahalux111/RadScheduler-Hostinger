@@ -3,6 +3,14 @@ session_start();
 include_once '../config/db.php';
 
 class AuthController {
+    public function __construct() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->login($_POST['username'], $_POST['password']);
+        } elseif (isset($_GET['action']) && $_GET['action'] === 'logout') {
+            $this->logout();
+        }
+    }
+
     public function login($username, $password) {
         global $conn;
 
@@ -15,7 +23,7 @@ class AuthController {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
             $_SESSION['user'] = $user;
-            header('Location: /dashboard.php');
+            header('Location: /');
         } else {
             echo "Invalid credentials!";
         }
@@ -23,6 +31,8 @@ class AuthController {
 
     public function logout() {
         session_destroy();
-        header('Location: /login.php');
+        header('Location: /views/login.php');
     }
 }
+
+new AuthController();
