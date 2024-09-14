@@ -1,0 +1,30 @@
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    role ENUM('admin', 'doctor', 'qa_radiographer') NOT NULL
+);
+
+CREATE TABLE availability (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    availability_start DATETIME,
+    availability_end DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE breaks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    break_start DATETIME,
+    break_end DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE notes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    note TEXT,
+    added_on DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
