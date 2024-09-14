@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label, input, textarea, select {
+    display: block;
+    margin-bottom: 10px;
+}
