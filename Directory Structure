@@ -1,13 +1,22 @@
-/doctor-management-app
-│── index.php               (Main entry point)
-│── db.php                  (Database connection)
-│── login.php               (Login functionality)
-│── dashboard.php           (Dashboard based on roles)
-│── admin_controls.php      (Admin controls for scheduling, breaks, notes)
-│── doctor_availability.php (Doctor's availability management)
-│── qa_availability.php     (QA Radiographer availability management)
-│── css
-│    └── style.css          (Basic styling)
-└── js
-     └── scripts.js         (Basic scripts for UI)
+.
+├── config/
+│   └── db.php                 # Database connection
+├── includes/
+│   ├── auth.php               # Authentication logic & session management
+│   ├── roles.php              # Role-based access control functions
+│   ├── availability.php       # Functions for availability management
+│   ├── breaks.php             # Break management for doctors and QA
+│   ├── notes.php              # Note management functions for doctors and QA
+├── public/
+│   ├── index.php              # Entry point, route based on role
+│   ├── login.php              # Login form
+│   ├── dashboard.php          # Main dashboard (Role-based views)
+│   ├── logout.php             # Logout functionality
+│   ├── manage_schedule.php    # Admin page to manage doctor/QA schedule
+├── templates/
+│   ├── header.php             # Header and nav bar
+│   └── footer.php             # Footer
+└── styles/
+    └── style.css              # CSS for dashboard and UI
+
 
